@@ -1,1 +1,1 @@
-# This is the project for lesson 10 - Mocha framework for unit test
+# This is the project for lesson 11 - Mocking in unit testing
