@@ -1,0 +1,10 @@
+{
+    "extension": "ts",
+    "spec": "specs/**/*.spec.ts",
+    "require": ["tsx/cjs", "./hooks/mocha-global-setup.hook.ts"],
+    "retries": 2,
+    "timeout": 120000,
+    "node-option": [
+        "import=tsx"
+    ]
+}
