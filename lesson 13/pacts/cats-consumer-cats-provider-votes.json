@@ -1,0 +1,64 @@
+{
+  "consumer": {
+    "name": "cats-consumer"
+  },
+  "interactions": [
+    {
+      "description": "a request to vote on cat image",
+      "providerStates": [
+        {
+          "name": "image exists"
+        }
+      ],
+      "request": {
+        "body": {
+          "image_id": "abc123",
+          "sub_id": "test-user",
+          "value": 1
+        },
+        "headers": {
+          "Content-Type": "application/json"
+        },
+        "method": "POST",
+        "path": "/votes"
+      },
+      "response": {
+        "body": {
+          "id": 123,
+          "message": "SUCCESS"
+        },
+        "headers": {
+          "Content-Type": "application/json"
+        },
+        "matchingRules": {
+          "body": {
+            "$": {
+              "combine": "AND",
+              "matchers": [
+                {
+                  "match": "type"
+                }
+              ]
+            }
+          }
+        },
+        "status": 200
+      }
+    }
+  ],
+  "metadata": {
+    "pact-js": {
+      "version": "16.0.2"
+    },
+    "pactRust": {
+      "ffi": "0.4.28",
+      "models": "1.3.5"
+    },
+    "pactSpecification": {
+      "version": "3.0.0"
+    }
+  },
+  "provider": {
+    "name": "cats-provider-votes"
+  }
+}
